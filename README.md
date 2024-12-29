@@ -23,3 +23,8 @@ This is a collection of my and other authors' useful CSS mods to improve and cle
 5. [expand_bookmarks](https://forum.vivaldi.net/topic/96123/expand-folders-with-a-single-click-css-only?_=1735482587809) by nafumofu:
 
    This mod allows you to expand and collapse folders in a list, such as bookmarks, with a single click
+
+Don't forget to visit the other repositories as well:
+1. https://github.com/quartz1216/vivaldi-gutter
+2. https://github.com/luetage/vivaldi_modding
+3. https://github.com/shaneburns/vivaldi-mods
