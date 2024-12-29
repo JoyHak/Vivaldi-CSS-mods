@@ -1,0 +1,25 @@
+/* 
+	Clear the interface of unnecessary stuff
+	
+	Author: rafaell0
+*/
+
+* {font-family: "ia writer quattro s";}
+
+/* Hide shadows and borders of extension windows */
+.extension-popup {
+	box-shadow: none !important;
+}
+.extension-popup > webview {
+	border: none !important;
+	border-radius: 12px!important;
+}
+
+
+body::-webkit-scrollbar,                                 		/* turn on vivaldi://flags/#overlay-scrollbars ! */
+.UrlBar-AddressField .UrlBar-UrlObfuscationWarning,				/* warning that appears when the address bar moving on hover */
+#app #browser .slim-scrollbar::-webkit-scrollbar,				/* sidebar small white scrollbar */
+.disable-titlebar#browser.win .window-buttongroup,				/* expand, minimize, close buttons */
+.vivaldi {														/* logo */
+    display: none !important; 
+}

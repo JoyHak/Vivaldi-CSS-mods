@@ -1,0 +1,89 @@
+/* 
+	Hide the tab bar completely and display on mouseover
+	
+	Authors: supra107 & R0STEFAN
+	Topic:  https://forum.vivaldi.net/topic/46458/automate-floating-vertical-tabbar-for-mouse-keyboard/148?_=1735482155591 
+*/
+
+:root {
+    --tabbarHoveroutTimeout: .5s
+}
+
+/*----- Scrollbar -----*/
+
+/* Wider scrollbar */
+#tabs-tabbar-container:is(.left, .right) .tab-strip::-webkit-scrollbar {
+    --scrollbarWidth: 10px !important;
+	border: 1px solid #9fb0cb !important;
+	border-radius: 8px !important;
+    padding: 0 2px !important;
+}
+
+/* No buttons */
+#tabs-tabbar-container:is(.left, .right) .tab-strip::-webkit-scrollbar-button {
+    display: none !important;
+}
+
+/* Scrollbar rounding */
+#tabs-tabbar-container:is(.left, .right) .tab-strip::-webkit-scrollbar-thumb {
+    border: 2px solid transparent !important;
+    border-radius: 8px !important;
+}
+
+/*----- Vertical Tabbar -----*/
+
+/* Set z-index and hide when not in use */
+#browser.tabs-left .tabbar-wrapper, #browser.tabs-right .tabbar-wrapper {
+    z-index: 1;
+    position: absolute;
+	transform: translateX(calc(-100% + 3px));
+	opacity: 0;
+    /*clip-path: inset(0 100% 0 0); */
+    transition: .1s ease-out .15s !important;
+  --HoverWidth: calc(100%);
+}
+
+
+/* Right side tab bar fix */
+#browser.tabs-right .tabbar-wrapper {
+    right: 0;
+}
+
+
+/* Show tab bar on inactive windows when moving tabs */
+#browser.tabs-left.isblurred:where(:has(div.tab-yield-space, .tab-acceptsdrop)) .tabbar-wrapper {
+    clip-path: initial;
+}
+
+#browser.tabs-left.isblurred:is(:active, :focus) .tabbar-wrapper:is(:active, :focus) {
+    clip-path: initial;
+}
+
+/* Show tab bar when hovering on left edge and prevent tab bar hiding when in use */
+/*#browser:is(.tabs-left, .tabs-right):where(:has(.mainbar:is(:hover))) .tabbar-wrapper,*/ #browser:is(.tabs-left, .tabs-right) .tabbar-wrapper:is(:hover, :focus-within) {
+	opacity: 1;
+   transform: translateX(calc(0%));
+    /*clip-path: inset(0 100% 0 0); */
+    transition: .1s ease-out .15s !important;
+  --HoverWidth: calc(100%);
+}
+
+
+}
+
+/* Don't hide tab bar when using workspace selector */
+#browser.tabs-left:where(:has(div.WorkspacePopup:is(:hover, :focus-within))) .tabbar-wrapper, #browser.tabs-right:where(:has(div.WorkspacePopup:is(:hover, :focus-within))) .tabbar-wrapper {
+    clip-path: inset(0 -400px 0 -400px);
+    transition: clip-path 0s !important;
+}
+
+#browser:not(.fullscreen) .mainbar > *,
+.mainbar .window-buttongroup.on-mainbar,
+.mainbar .window-buttongroup.on-mainbar > button{
+    min-height: 34px !important;
+	max-height: 34px !important;
+	height: 34px !important;
+	scale: 1 !important;
+}
+
+

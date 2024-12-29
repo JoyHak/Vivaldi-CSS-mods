@@ -1,0 +1,301 @@
+/* 
+	Minimises the tab bar into rows
+	
+	Authors: nirin, masashinogawa, nafumofu
+	Topic:  https://forum.vivaldi.net/topic/82900/vertical-tabs-collapsed-expand-on-hover/132?_=1735482155600
+*/
+
+.svg-tab-stack .stack-frame {
+    stroke: rgb(255, 210, 0);
+  }
+  
+  /* Tab stack outline colour (if Accent on Window off) - Only needed if 'remove outline' css isn't active. */
+  .color-behind-tabs-off .svg-tab-stack .stack-frame {
+      stroke: rgb(255, 210, 0);
+  }
+
+  /* Remove tab stack outline */
+.svg-tab-stack line, .svg-tab-selection line, .svg-tab-stack rect, .svg-tab-selection rect {
+    stroke-width: 0px;
+}
+
+/* Add top / bottom / side border to tab stacks */
+#tabs-container .tab-position.is-substack .tab {
+    border-top: 0px solid rgb(255, 210, 0) !important;
+    border-left: 4px solid #eeeeee !important;
+    border-radius: 0px;
+}
+
+/* removes the white background behind active-tab favicon */
+.tab.active .tab-header .favicon:not(.svg) {
+   filter: none !important;
+}
+
+
+/*Rounds the corners of the viewport/webpage window*/
+#webpage-stack { border-radius:15px;}
+
+
+/* Active Tab background colour (so it doesn't have to match the adress bar colour) */
+#browser .tab-position .tab.active {
+background-color: #5a1a1a;
+}
+
+
+
+/*Move Tab Thumbnails out a little bit*/
+/* #vivaldi-tooltip .tooltip .tooltip-item {Margin-left:35px} */
+
+
+
+
+
+/*///*/
+/* Vertical Tab sidebar auto-hides and switches between the two-column stacks on hover */
+/*  https://forum.vivaldi.net/topic/82900/collapsing-vertical-tabs-that-expand-on-hover-with-and-without-floating-tabs/79?page=4   */
+
+/*:root {
+	--closeDelay: 200ms !important; */  /* currently causes the vibratey glitch
+}*/
+
+.tabbar-wrapper .tabbar-wrapper,
+#tabs-container.left,
+#tabs-subcontainer.left,
+#tabs-container.right,
+#tabs-subcontainer.right,
+.button-toolbar.workspace-popup.tabbar-workspace-button {
+    min-width: 32px;
+    min-height: 32px;
+    transition: min-width 250ms ease-out !important; /* Change "50ms" to how long you want the animation to play */
+}
+
+.tabbar-wrapper .tabbar-wrapper:hover,
+#tabs-container.left:hover,
+#tabs-subcontainer.left:hover,
+#tabs-container.right:hover,
+#tabs-subcontainer.right:hover,
+.button-toolbar.workspace-popup.tabbar-workspace-button:hover {
+    scrollbar-width: auto !important;
+    min-width: 300px !important;      /*Width of open Tab Bar panel*/
+    transition-delay: 250ms !important;  /* Change "70ms" to how long you want to delay the animation */
+}
+
+.tab-strip {
+  &:not(:hover) {scrollbar-width: none;}
+  .button-toolbar.newtab {
+  left: 0px !important;
+  width: 300px;    /* Needs to match Width of open Tab Bar panel*/
+  }
+}
+
+#tabs-subcontainer:hover .tab-position {
+	width:300px;    /* Needs to match Width of open Tab Bar panel*/
+}
+
+.tabbar-wrapper .tabbar-wrapper:not(:hover),
+#tabs-container:not(:hover) ~ #tabs-subcontainer:not(:hover),
+#tabs-subcontainer:not(:hover) ~ #tabs-container:not(:hover),
+.tabbar-workspace-button:not(:hover) {
+    transition-delay: var(--closeDelay) !important;
+}
+
+.button-toolbar.workspace-popup.tabbar-workspace-button:hover:has(+ #tabs-tabbar-container > #tabs-subcontainer) {
+    min-width: 336px !important;   /* Needs to be 36px higher than Width of open Tab Bar panel */
+    max-width: 336px !important;   /* Needs to be 36px higher than Width of open Tab Bar panel */
+    transition-delay: 250ms !important; /* Change "70ms" to how long you want to delay the animation */
+}
+
+.tabbar-wrapper .tabbar-wrapper:hover:has(#tabs-tabbar-container > #tabs-subcontainer) {
+    min-width: 336px !important;    /* Needs to be 36px higher than Width of open Tab Bar panel */
+  	max-width: 336px !important;      /* Needs to be 36px higher than Width of open Tab Bar panel */
+    transition-delay: 200ms !important;  /* Delay to allow hovering past the right or left hand tab border */
+}
+
+.button-toolbar.workspace-popup.tabbar-workspace-button > button {
+    justify-content: left !important;
+}
+
+#browser:not(.alt-tabs) .tab-position .tab:hover.tab-small:not(.tab-mini).active .title,
+#browser:not(.alt-tabs) .tab-position .tab.force-hover.tab-small:not(.tab-mini).active .title {
+    display: flex !important;
+}
+
+.tabbar-workspace-button {
+    width: 100% !important;
+}
+
+#tabs-tabbar-container.left,
+#tabs-tabbar-container.right {
+    width: auto !important;
+    min-width: 40px;
+}
+
+
+/* leftside 1st button */
+.toolbar-mainbar > div:first-child > .page-zoom-controls:is(:hover, :focus-within) > input[type=range] {
+	transform: translate(3px, 29px);
+}
+
+.toolbar-mainbar > div:first-child > .page-zoom-controls:has(input[type=range]) .button-toolbar:has(button[title="Reset Zoom"]) {
+	transform: translate(24px, 18.5px);
+}
+
+/* rightside button */
+.toolbar-mainbar > div:nth-last-child(4) > .page-zoom-controls:is(:hover, :focus-within) > input[type=range] {
+	transform: translate(-10px, 29px);
+}
+
+.toolbar-mainbar > div:nth-last-child(3) > .page-zoom-controls:is(:hover, :focus-within) > input[type=range] {
+	transform: translate(-44px, 29px);
+}
+
+.toolbar-mainbar > div:nth-last-child(3) > .page-zoom-controls input[type=range]::after {
+	left: 40%;
+}
+
+.toolbar-mainbar > div:nth-last-child(3) > .page-zoom-controls:has(input[type=range]) .button-toolbar:has(button[title="Reset Zoom"]) {
+	transform: translate(-24px, 18.5px);
+}
+
+.toolbar-mainbar > div:nth-last-child(2) > .page-zoom-controls:is(:hover, :focus-within) > input[type=range] {
+	transform: translate(-78px, 29px);
+}
+
+.toolbar-mainbar > div:nth-last-child(2) > .page-zoom-controls input[type=range]::after {
+	left: 64%;
+}
+
+.toolbar-mainbar > div:nth-last-child(2) > .page-zoom-controls:has(input[type=range]) .button-toolbar:has(button[title="Reset Zoom"]) {
+	transform: translate(-58px, 18.5px);
+}
+
+.toolbar-mainbar > div:last-child > .page-zoom-controls:is(:hover, :focus-within) > input[type=range] {
+	transform: translate(-112px, 29px);
+}
+
+.toolbar-mainbar > div:last-child > .page-zoom-controls input[type=range]::after {
+	left: 88%;
+}
+
+.toolbar-mainbar > div:last-child > .page-zoom-controls:has(input[type=range]) .button-toolbar:has(button[title="Reset Zoom"]) {
+	transform: translate(-92px, 18.5px);
+}
+
+/** Make the expanded tabbar float on the webpage. Use with tab-expansion mod. **/
+#main > .inner > div:has(#tabs-tabbar-container:is(.left, .right)) {
+  position: absolute;
+  z-index: 2;
+  opacity: 1;
+  background-color: var(--colorBg);
+  height: 100% !important;
+}
+
+#browser.transparent-tabbar .inner > div:has(#tabs-tabbar-container:is(.left, .right)) {
+  background-color: var(--colorImageFgHeaviest);
+}
+
+.inner #webpage-stack {
+  margin-left: 36px;
+}
+
+.inner:has(#tabs-subcontainer:is(.left, .right)) #webpage-stack {
+  margin-left: 72px;
+}
+
+.fullscreen #webpage-stack {
+  margin-left: 0px;
+}
+
+.theme-dark .tab-position .tab.active .tab-header .favicon {
+  filter: none !important;
+}
+
+/* Fixing favicon */
+.tab-header {padding-left: 7px !important;}
+/* Hide audio icon */
+/* span.tab-audio {display:none;} */
+/* sub tab fix*/
+#tabs-container,
+#tabs-subcontainer {
+    overflow:hidden;
+	&.overflow {flex:1 1 auto !important}
+}
+
+#tabs-subcontainer:not(:hover) .subcontainer-lock:has(.newtab) {flex-direction: column;}
+#tabs-subcontainer:not(:hover) .tab-position {
+	transition-property: width !important;
+	transition-delay: var(--closeDelay) !important;
+}
+
+#tabs-container .sync-and-trash-container  {   /* Sync tabs and deleted tabs icons, this keeps them justified-left when the tab-bar expands */
+  flex-direction: column !important;
+  align-content: flex-start !important;
+  margin: 0 !important;
+}
+
+button.ToolbarButton-Button[name="WorkspaceButton"] {
+    position: absolute;
+    width: 100%;
+}
+/* Show the close button on hover */
+.tab:hover .close {
+  display: flex !important;
+}
+/*///*/
+
+
+
+
+
+/* Increase tab height */
+/* Alternative -> UI Zoom on Vivaldi settings */
+
+.tab-position .tab .tab-header .favicon {
+  padding-top: 3px !important;
+  -webkit-transform:scale(1) !important;
+}
+
+/* Gap between favicon and text */
+span.favicon.jstest-favicon-image {
+  margin-right: 4px; /* Adjust this value to increase or decrease the gap */
+}
+
+
+/* increase favicon size */
+.tab-header .favicon img{
+  width: 18px;
+  aspect-ratio: auto 18 / 18;
+  height: 18px;
+}
+
+/* increase favicon bounding box so it doesn't get cut off */
+.tab-position .tab .tab-header .favicon {  /* these were 3px, 18px/18px/18px*/
+  padding-top: 3px !important;
+  height: 20px !important;
+  flex: 0 0 20px !important;
+  min-width: 20px !important;
+}
+
+
+
+#tabs-subcontainer {
+  .tab-header {
+      max-width: 280px !important;
+      padding-left: 6px !important;
+  }
+  .favicon,
+  .title,
+  .tab:hover .close {
+      display: flex !important;
+  }
+  .close {
+      margin-right: 0px !important;
+  }
+}
+
+
+
+/* Hide tabbar overall resizer */
+ .tabbar-workspace-button ~ #tabs-tabbar-container .SlideBar.SlideBar--FullHeight {visibility: hidden;}
+/* Hide tabbar columns' resizer, only for the between-columns centre line */
+ .substrip-tabs-on #tabs-tabbar-container:is(.left, .right) > #tabs-container .SlideBar--FullHeight {visibility: hidden;}

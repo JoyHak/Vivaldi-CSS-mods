@@ -1,0 +1,12 @@
+/* 
+	This mod allows you to expand and collapse folders in a list, such as bookmarks, with a single click
+	
+	Author: nafumofu
+	Topic:  https://forum.vivaldi.net/topic/96123/expand-folders-with-a-single-click-css-only?_=1735482587809
+*/
+
+.tree-item:active .expand-icon::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+}
