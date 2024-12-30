@@ -1,5 +1,5 @@
 This is a collection of my and other authors' useful CSS mods to improve and clean up the interface of Vivaldi browser. 
-![1](DEMO.mp4)
+![1](DEMO.gif)
 
 1. **hide_UI** by rafaell0: 
 
