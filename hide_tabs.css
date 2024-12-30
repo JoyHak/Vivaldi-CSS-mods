@@ -77,13 +77,5 @@
     transition: clip-path 0s !important;
 }
 
-#browser:not(.fullscreen) .mainbar > *,
-.mainbar .window-buttongroup.on-mainbar,
-.mainbar .window-buttongroup.on-mainbar > button{
-    min-height: 34px !important;
-	max-height: 34px !important;
-	height: 34px !important;
-	scale: 1 !important;
-}
 
 
