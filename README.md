@@ -18,7 +18,7 @@ This is a collection of my and other authors' useful CSS mods to improve and cle
 
 4. **svg_extensions_icons** by rafaell0: 
 
-   monochrome svg icons for extensions. Resets when the contents of the toolbar are changed.
+   monochrome svg icons for extensions. Resets when the contents of the toolbar are changed. If u want true mono/colored icons: https://github.com/JoyHak/customize-vivaldi-buttons
 
 5. [expand_bookmarks](https://forum.vivaldi.net/topic/96123/expand-folders-with-a-single-click-css-only?_=1735482587809) by nafumofu:
 
