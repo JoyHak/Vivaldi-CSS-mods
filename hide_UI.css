@@ -1,7 +1,7 @@
 /* 
-	Auto-hide address bar (mainbar) and move the page loading progress bar beyond mainbar
-	
-	Author: rafaell0
+Auto-hide address bar (mainbar) and move the page loading progress bar beyond mainbar	
+Author: Rafaello
+Repo: https://github.com/JoyHak/Vivaldi-CSS-mods
 */
 
 /* Mainbar default position */
@@ -26,13 +26,13 @@
     transform: translateY(-120%); 
 }
 
-/* Hover area 
+/* Hover area */
 .toolbar-mainbar::before {
     content: '';
     position: absolute;
     inset: 100% 0 -30px 0;
     background: transparent; 
-}*/
+}
 
 /* Minimize URL bar width relative to sidebar
 #main > div.mainbar > div > div > div.UrlBar-AddressField.urlfield-anchor.button-textonly.below {
