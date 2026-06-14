@@ -4,9 +4,78 @@
 	Author: rafaell0
 */
 
-* {font-family: "ia writer quattro s";}
+/* Clear UI */
+body::-webkit-scrollbar,                                 		/* turn on vivaldi://flags/#overlay-scrollbars ! */
+.UrlBar-AddressField .UrlBar-UrlObfuscationWarning,				/* warning that appears when the address bar moving on hover */
+#app #browser .slim-scrollbar::-webkit-scrollbar,				/* sidebar small white scrollbar */
+#browser.win .window-buttongroup,				                /* expand, minimize, close buttons */
+#browser.win .settings-header,                                  /* settings title */
+#browser:not(.tabs-top) #header,                                /* tabs header in "hide UI" mode */
+.vivaldi                                                       /* logo */
+{														
+    display: none !important; 
+}
 
-/* Hide shadows and borders of extension windows */
+/* .tabs-top .toolbar-tabbar,                                      tabs buttons */
+/* .tabs-top #tabs-container .toolbar-tabbar-before:empty,         tabs gap */
+/* #tabs-container > div.toolbar.toolbar-tabbar-after.toolbar-large   new tab & trash */
+/* 
+{														
+    display: none !important; 
+}
+*/
+ 
+*,
+#browser.win, 
+#browser.win button, 
+#browser.win input, 
+#browser.win select, 
+#browser.win textarea {
+    /* font-family: iA Writer Quattro S; */
+    /* font-family: Maple Mono Normal NF CN; */
+    font-family: iMWritingQuat nerd font;
+}
+
+/* Fix search results black color */
+#main > div.mainbar > div > div > div.UrlBar-AddressField.urlfield-anchor.button-textonly.below > div.UrlBar-UrlFieldWrapper > div > div.OmniDropdown,
+#browser {
+    --colorBgIntense: #191919;
+    --colorBgIntenser: #191919;
+    --colorBg: #191919;
+    --colorBgAlpha: #191919e6;
+    --colorBgAlphaHeavy: #191919a6;
+    --colorBgAlphaHeavier: #19191940;
+    --colorBgAlphaBlur: #191919;
+    --colorBorder: #191919;
+    --colorBorderDisabled: #191919;
+    --colorBorderSubtle: #191919;
+    --colorBorderIntense: #191919;
+    --colorWarningFg: #191919;
+}
+/*
+#panels-container {
+    border: 0;
+    background-color: #1f2021;
+}
+*/
+.vivaldi-settings .settings-content,
+.SearchField, 
+.MailSearchField-Inner, 
+.UrlBar-AddressField {
+    background-color: #191919;
+}
+
+.color-behind-tabs-off,
+.vivaldi-settings h2 {
+    border: none !important;
+    border-bottom: none !important;
+}
+
+.vivaldi-settings .settings-sidebar {
+    box-shadow: none !important;
+    background-color: none !important;
+}
+
 .extension-popup {
 	box-shadow: none !important;
 }
@@ -15,11 +84,6 @@
 	border-radius: 12px!important;
 }
 
-
-body::-webkit-scrollbar,                                 		/* turn on vivaldi://flags/#overlay-scrollbars ! */
-.UrlBar-AddressField .UrlBar-UrlObfuscationWarning,				/* warning that appears when the address bar moving on hover */
-#app #browser .slim-scrollbar::-webkit-scrollbar,				/* sidebar small white scrollbar */
-.disable-titlebar#browser.win .window-buttongroup,				/* expand, minimize, close buttons */
-.vivaldi {														/* logo */
-    display: none !important; 
+.address-top .mainbar {
+    border-bottom-width: 0 !important;
 }

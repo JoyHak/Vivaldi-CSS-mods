@@ -6,28 +6,33 @@
 
 /* Mainbar default position */
 #browser.win.address-top .toolbar-mainbar:not(.extensionIconPopupMenu > .toolbar) {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    transform: translateY(0); 
-    transition: transform 600ms; 
-    background: var(--colorBg); 
-    min-height: 0; 
+    box-shadow: 0px 5px 20px #101010;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 0;
+    max-width: 80%;
+    /* min-height: 0; */
+    /* left: 10%; */
+    font-size: 15px;
+    background: var(--colorBg);
+    opacity: 1;
 }
 
 /* Hide mainbar if not focused */
-#browser.win.address-top .toolbar-mainbar:not(:hover):not(:focus-within):not(:has(.button-pressed)):not(.extensionIconPopupMenu > .toolbar) {
-    transform: translateY(-102%); 
+#browser.win.address-top .toolbar-mainbar:not(:focus-within):not(:has(.button-pressed)):not(.extensionIconPopupMenu > .toolbar) {
+    opacity: 0;
+    transform: translateY(-120%); 
 }
 
-/* Hover area */
+/* Hover area 
 .toolbar-mainbar::before {
     content: '';
     position: absolute;
     inset: 100% 0 -30px 0;
     background: transparent; 
-}
+}*/
 
 /* Minimize URL bar width relative to sidebar
 #main > div.mainbar > div > div > div.UrlBar-AddressField.urlfield-anchor.button-textonly.below {
@@ -35,9 +40,44 @@
 } */
 
 /* Move the page load progress bar down outside the Mainbar */
+/*
 .UrlBar-AddressField .pageload .pageload-indicator {
   position: fixed;
   transform: translateY(500%); 
   width: 100%;
   height: 20%;
+}
+
+
+#tabs-tabbar-container {
+    height: 18px !important;
+    top: -7px !important;    
+}
+#tabs-container {
+    min-height: 27px !important;
+}
+
+.win #tabs-container:not(.none).top {
+    padding-left: 0;
+    padding-right: 0;
+}
+*/
+.tab .title {
+    font-size: 9px !important;
+}
+
+.horizontal-scroll-arrow {
+    scale: 0.85    
+}
+
+.OmniLinkItem-DisplayText, .OmniLinkItem-Favicon, .OmniLinkItem-EraseButton {
+    margin: 0.3em;
+    align-items: center;
+    font-size: 15px;
+    /* height: 1.8em; */
+}
+
+.below .OmniDropdown {
+    top: -1px;
+    padding-top: 35px;
 }
