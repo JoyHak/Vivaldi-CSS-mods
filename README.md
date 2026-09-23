@@ -54,6 +54,10 @@ Then you can import Breeze dark on `Themes` tab. Downloaded font can be applied 
    
    </details>
    
+4. [**statusbar_links**](statusbar_links.css)
+
+   Removes all contents from status bar except links preview. Allows to use status bar to preview the link under mouse cursor. *Requires status bar to be visisble.*
+   <img width="1301" height="549" alt="links" src="https://github.com/user-attachments/assets/ec6ede8e-343c-47ba-a7fe-cde530ab823f" />
 
 5. **svg_extensions_icons**: 
 
