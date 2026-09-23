@@ -1,0 +1,29 @@
+/* 
+	Remove all contents from status bar except links preview. Requires status bar to be visisble.
+	Author: rafaell0
+*/
+#main {
+    min-height: 97%;
+    position: relative;
+    flex-direction: column;
+}
+
+footer#footer {
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 9;
+    bottom: -5px;
+    position: sticky;
+}
+
+.StatusInfo {
+    visibility: visible;
+    font-family: iMWritingQuat nerd font;
+    justify-content: center;
+}
+
+.StatusInfo-Content {
+    background: var(--colorBg);
+    font-size: 15px;
+    border-radius: 3px;
+}
